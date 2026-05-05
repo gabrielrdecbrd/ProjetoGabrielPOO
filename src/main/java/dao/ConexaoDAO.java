@@ -7,11 +7,9 @@ import java.sql.DriverManager;
 public class ConexaoDAO {
 
 
-    private static final String URL  = "jdbc:mysql://localhost:3306/bancoGabriel?useSSL=false&serverTimezone=America/Fortaleza";
-
-    private static final String USER = "root";
-
-    private static final String PASS = "";
+    private static final String URL  = "jdbc:mysql://bd_savir.mysql.dbaas.com.br:3306/bd_savir?useSSL=false&serverTimezone=America/Fortaleza";
+    private static final String USER = "bd_savir";
+    private static final String PASS = "B@nc0D@d0s";
 
 
     public static Connection getConnection() throws Exception {
