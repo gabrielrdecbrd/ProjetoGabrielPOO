@@ -35,9 +35,10 @@ public class FormPrincipal extends JFrame{
         JMenu menuUsuarios = new JMenu("Usuários");
         menuUsuarios.setForeground(Color.WHITE);
         JMenuItem itemGerenciar = new JMenuItem("Gerenciar Usuários");
-        itemGerenciar.addActionListener(e ->
-                JOptionPane.showMessageDialog(this, "Em breve: Sprint 2!")
-        );
+        itemGerenciar.addActionListener(e -> {
+            FormUsuarios telaUsuarios = new FormUsuarios();
+            telaUsuarios.setVisible(true);
+        });
         menuUsuarios.add(itemGerenciar);
         menuBar.add(menuUsuarios);
 
