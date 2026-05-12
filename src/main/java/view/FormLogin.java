@@ -99,7 +99,7 @@ public class FormLogin extends JFrame {
         return painel;
     }
 
-    // Monta o painel da aba Cadastro
+
     private JPanel criarPainelCadastro() {
         JPanel painel = new JPanel(new GridBagLayout());
         painel.setBackground(Color.BLACK);
@@ -107,14 +107,14 @@ public class FormLogin extends JFrame {
         gbc.insets = new Insets(10, 10, 10, 10);
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        // Título
+
         JLabel lblTitulo = new JLabel("CADASTRO", SwingConstants.CENTER);
         lblTitulo.setFont(new Font("Arial", Font.BOLD, 22));
         lblTitulo.setForeground(new Color(200, 0, 0));
         gbc.gridx = 0; gbc.gridy = 0; gbc.gridwidth = 2;
         painel.add(lblTitulo, gbc);
 
-        // Campo novo usuário
+
         gbc.gridwidth = 1; gbc.gridy = 1; gbc.gridx = 0;
         JLabel lblUsuario = new JLabel("Novo Usuário:");
         lblUsuario.setForeground(Color.WHITE);
@@ -127,7 +127,7 @@ public class FormLogin extends JFrame {
         gbc.gridx = 1;
         painel.add(txtNovoUsuario, gbc);
 
-        // Campo nova senha
+
         gbc.gridx = 0; gbc.gridy = 2;
         JLabel lblSenha = new JLabel("Nova Senha:");
         lblSenha.setForeground(Color.WHITE);
@@ -140,7 +140,7 @@ public class FormLogin extends JFrame {
         gbc.gridx = 1;
         painel.add(txtNovaSenha, gbc);
 
-        // Botão salvar
+
         btnSalvar = new JButton("Salvar Cadastro");
         btnSalvar.setBackground(new Color(200, 0, 0));
         btnSalvar.setForeground(Color.WHITE);
@@ -153,7 +153,7 @@ public class FormLogin extends JFrame {
         return painel;
     }
 
-    // Lógica de autenticação
+
     private void acaoLogin() {
         String usuario = txtUsuario.getText().trim();
         String senha   = new String(txtSenha.getPassword()).trim();
@@ -182,7 +182,7 @@ public class FormLogin extends JFrame {
         }
     }
 
-    // Lógica de cadastro com validações
+
     private void salvarDados() {
         String usuario = txtNovoUsuario.getText().trim();
         String senha   = new String(txtNovaSenha.getPassword()).trim();
@@ -215,12 +215,12 @@ public class FormLogin extends JFrame {
         ConexaoDAO objConexaoDAO = new ConexaoDAO();
         objConexaoDAO.cadastrarUsuario(objUsuarioDTO);
 
-        // Limpa os campos após cadastro
+
         txtNovoUsuario.setText("");
         txtNovaSenha.setText("");
     }
 
-    // Valida se a senha tem pelo menos 6 caracteres, uma letra e um número
+
     private boolean senhaValida(String senha) {
         if (senha.length() < 6) return false;
         boolean temLetra  = senha.matches(".*[a-zA-Z].*");
@@ -228,7 +228,6 @@ public class FormLogin extends JFrame {
         return temLetra && temNumero;
     }
 
-    // Ponto de entrada da aplicação
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> new FormLogin().setVisible(true));
     }
